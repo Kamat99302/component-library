@@ -2,8 +2,7 @@
 
 Collection de composants React réutilisables avec variants multiples et customisation complète via props.
 
-![Component Library Screenshot](./assets/img/component-library.PNG)
-
+![Component Library Screenshot](./component-library.PNG)
 ## 🎯 Fonctionnalités
 
 - **Badge** : Labels avec 2 formes (square/pill) et 8 couleurs

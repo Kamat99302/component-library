@@ -1,38 +1,53 @@
+*, *::before, *::after {
+  box-sizing: border-box; 
+}
+
 html,body{
   background-color: lightblue;
-  overflow-x: hidden
+  overflow-x: hidden;
+  margin: 0;
 }
 
 
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
-h1{
-  color: black;
+h1{color: black;}
+
+/* SECTIONS COMMUNES */
+
+.badge-section, .card-section, .testimonial-section, .banner-section {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  padding: 20px;
+  gap: 1rem;
 }
 
+/* COMPOSANTS (DESIGN MOBILE PAR DÉFAUT) */
+
+/* Badges */
 .badge-section{
-  display: flex;
   align-items: center;
   gap: 30px;
 }
 
 .badge-section p{
+  width: 100%;
+  margin-bottom: 10px;
   font-family: "Permanent Marker";
   color: #5E5D5D;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 span{
   font-size: 1.2rem;
   font-weight: 500;
-  
 }
-
 
 .badge-square{
   border-radius: 7px;
@@ -44,6 +59,7 @@ span{
   padding: .9em 2em;
 }
 
+/* Couleurs Badges */
 .badge-gray{
   border: 1px solid #F3F4F6;
   background-color: #F3F4F6;
@@ -92,56 +108,52 @@ span{
   color: #9D174D;
 }
 
-.banner-multiline-section, .banner-singleline-section{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 50px;
-}
-
-.type{
-  font-family: "Permanent Marker";
-  color: #5E5D5D;
-  font-size: 2rem;
-}
-
-.banner{
-  width: 100%;  
-  max-width: 500px;  
-  border-radius: 9px;
-  padding: 8px 5px;
-}
-
-.banner-header {
-  display: flex;
-  align-items: center; 
-  padding: 5px;
-  gap: 8px;
-}
-
-.title p{
-  margin-top: 7px;
-  margin-left: 31px;
-}
-
-.title{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap:5px;
-}
-
-.banner-section {
-  display: flex;
-  gap: 50px;
-  align-items: flex-start;
+/* Banners */
+.banner-section{ 
   margin-top: 50px; 
+  gap: 50px; 
+  align-items: flex-start; 
 }
 
-.banner-multiline-section,
-.banner-singleline-section {
-  flex: 1; 
+.banner-multiline-section, .banner-singleline-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  flex: 1;
+}
+
+.type{ 
+  font-family: "Permanent Marker"; 
+  color: #5E5D5D; 
+  font-size: 2rem; 
+}
+
+.banner { 
+  width: 100%; 
+  max-width: 500px; 
+  border-radius: 9px; 
+  padding: 8px 5px; 
+}
+
+.banner-header { 
+  display: flex; 
+  align-items: center; 
+  padding: 5px; 
+  gap: 8px; 
+}
+
+.title { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+  text-align: left; 
+  gap: 5px; 
+}
+
+.title p { 
+  margin-top: 7px; 
+  margin-left: 31px; 
 }
 
 .card-section{
@@ -152,21 +164,23 @@ span{
   flex-wrap: wrap;  
 }
 
+/* Cards */
+.card-section { flex-direction: row; gap: 30px; }
 .card {
   width: 100%;
   max-width: 300px;
-  min-height: 170px;  
+  min-height: 170px;
   border-radius: 10px;
   background-color: #F9FAFB;
-  padding: 40px 24px 24px 24px; 
-  position: relative; 
-  margin-top: 40px;  
+  padding: 40px 24px 24px 24px;
+  position: relative;
+  margin-top: 40px;
 }
-.card .icon{
-  position: absolute;  
-  top: -30px;  
+.card .icon {
+  position: absolute;
+  top: -30px;
   left: 50%;
-  transform: translateX(-50%);  
+  transform: translateX(-50%);
   padding: 16px;
   border-radius: 8px;
   display: inline-flex;
@@ -174,20 +188,20 @@ span{
   justify-content: center;
 }
 
-.card-hoverable:hover{
-  transform: translateY(-4px);  
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
+.card-hoverable:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
+  cursor: pointer; 
 }
 
-.card-title{
-  font-size: 18px;
-  color: #111827;
+.card-title { 
+  font-size: 18px; 
+  color: #111827; 
 }
 
-.card-text{
-  font-size: 16px;
-  color: #6B7280;
+.card-text { 
+  font-size: 16px; 
+  color: #6B7280; 
 }
 
 .testimonial-section{
@@ -198,65 +212,106 @@ span{
   font-family: 'inter';
 }
 
+/* Testimonials */
+
+.testimonial-section { 
+  font-family: 'inter'; 
+
+}
+
 .testimonial {
   display: flex;
-  gap: 24px;      
+  flex-direction: column; 
+  align-items: center;
+  gap: 24px;
   width: 100%;
   max-width: 800px;
   min-height: 250px;
   border-radius: 10px;
-  background-color: #2563EB;  
-  padding: 32px;  
+  background-color: #2563EB;
+  padding: 32px;
   margin-top: 40px;
-  align-items: flex-start;  
+}
+.testimonial-image { 
+  width: 100%; 
+  max-width: 200px; 
+  height: auto; 
+  object-fit: cover; 
+  border-radius: 8px; 
+  flex-shrink: 0; 
 }
 
-.testimonial-image {
-  width: 200px;       
-  height: 250px;      
-  object-fit: cover;  
-  border-radius: 8px;
-  flex-shrink: 0;     
+.testimonial-content { 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 16px; 
+  width: 100%; 
+  text-align: center; 
 }
 
-.testimonial-content {
-  flex: 1;  
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
+.testimonial-quote { 
+  font-size: 18px; 
+  line-height: 1.6; 
+  margin: 0; 
 }
 
-.testimonial-quote {
-  font-size: 18px;
-  line-height: 1.6;
-  margin: 0;
+.testimonial-author { 
+  text-align: center; 
+  margin-top: 20px; 
 }
 
-.testimonial-author {
-  margin-top: auto;
-  text-align: left;
+.author-name { 
+  padding-top: 30px; 
+  font-weight: 600; 
+  margin: 0 0 4px 0; 
 }
 
-.author-name {
-  padding-top: 30px;
-  font-weight: 600;
-  margin: 0 0 4px 0;
+.author-role { 
+  margin: 0; 
+  opacity: 0.9; 
+  font-size: 14px; 
 }
 
-.author-role {
-  margin: 0;
-  opacity: 0.9;
-  font-size: 14px;
+.quote-icon { 
+  width: 60px; 
+  height: auto; 
+  margin-bottom: 8px; 
 }
 
+/* CONFIGURATION GRAND ÉCRAN */
+@media (min-width: 768px) {
+  .testimonial {
+    flex-direction: row;      
+    text-align: left;         
+    align-items: flex-start;
+    padding: 32px;
+  }
 
-.quote-icon{
-  width: 60px;
-  height: auto;
-  margin-bottom: 8px;
+  .testimonial-image {
+    width: 200px;             
+    height: 250px;
+  }
+
+  .testimonial-content {
+    text-align: left;         
+  }
+
+  .testimonial-author {
+    text-align: left;        
+  }
+
+  .badge-section p {
+    width: auto; 
+  }
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em; 
+  }
 
-
-
+  .banner-section {
+    flex-direction: column; 
+  }
+}
